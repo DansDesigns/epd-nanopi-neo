@@ -7,7 +7,7 @@ This code controls the Waveshare 1.54 inch E-Paper display (variant B, BW/three-
 
 - apt: python3-pip, python3-pil python3-spidev
 - npi-config/armbian-config: enable SPI0
-- Github: [OPiGPIO]([https://github.com/rm-hull/OPi.GPIO](OPi GPIO))
+- Github: [OPi-GPIO](https://github.com/rm-hull/OPi.GPIO)
 
 ## Pin Mapping can be changed in epdconfig.py
 ```
