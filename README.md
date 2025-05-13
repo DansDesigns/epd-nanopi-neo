@@ -11,13 +11,13 @@ This code controls the Waveshare 1.54 inch E-Paper display (variant B, BW/three-
 
 ## Pin Mapping can be changed in epdconfig.py
 
-|  Display |   NanoPi   |
-VCC--------3.3V-------17
-GND--------GND--------20
-CS---------24---------24 (PC3)
-RESET------12---------12 (PA6)
-DC/RS------18---------18 (PG9)
-MOSI-------19---------19 (PC0)
-SCK--------23---------23 (PC2)
-BUSY-------
+|Display | NanoPi |
+VCC----3.3V-----17
+GND----GND------20
+CS--------------13 (PA13)
+RESET----------- 6 (PA06)
+DC/RS--------- 201 (PG09)
+MOSI----------- 64 (PC00)
+SCK------------ 66 (PC02)
+BUSY---------- 200 (PG08)
 
