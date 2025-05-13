@@ -33,16 +33,16 @@
 
 
 import spidev
-import RPi.GPIO as GPIO
+import OPi.GPIO as GPIO #replaces RPi.GPIO
 import time
 
-# Pin definition
+# Pin definition - CHANGE FOR NANOPI NEO
 RST_PIN         = 199 # RX1
 DC_PIN          = 12 # SDA
 BUSY_PIN        = 198 # TX1
 
 # SPI device, bus = 0, device = 0
-SPI = spidev.SpiDev(1, 0)
+SPI = spidev.SpiDev(0, 0)
 
 def digital_write(pin, value):
     GPIO.output(pin, value)
