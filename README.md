@@ -7,9 +7,6 @@ This code controls the Waveshare 1.54 inch E-Paper display (variant B, BW/three-
 
 - apt: python3-pip, python3-pil python3-spidev
 - npi-config/armbian-config: enable SPI0
-- or add to /boot/armbianEnv.txt:
-    param_spidev_spi_bus=0
-    param_spidev_max_freq=4500000
 - Github: OPi-GPIO
 
 ## Pin Mapping can be changed in epdconfig.py
