@@ -10,7 +10,7 @@ This code controls the Waveshare 1.54 inch E-Paper display (variant B, BW/three-
 - npi-config: enable SPI1, disable UART1, disable I2C1
 - Github: OPi-GPIO
 
-## Pin Mapping can be changed in 
+## Pin Mapping can be changed in epdconfig.py
 
 | Display | NanoPi |
 |---------|--------|
