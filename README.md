@@ -10,7 +10,7 @@ This code controls the Waveshare 1.54 inch E-Paper display (variant B, BW/three-
 - Github: OPi-GPIO
 
 ## Pin Mapping can be changed in epdconfig.py
-
+```
 |Display | NanoPi |
 VCC----3.3V-----17
 GND----GND------20
@@ -20,4 +20,4 @@ DC/RS--------- 201 (PG09)
 MOSI----------- 64 (PC00)
 SCK------------ 66 (PC02)
 BUSY---------- 200 (PG08)
-
+```
