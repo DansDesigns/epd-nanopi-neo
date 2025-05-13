@@ -33,16 +33,32 @@
 
 
 import spidev
-import OPi.GPIO as GPIO #replaces RPi.GPIO
+#from smbus2 import SMBus
 import time
+import OPi.GPIO as GPIO #replaces RPi.GPIO
+from OPi.pin_mappings import sunxi
 
-# Pin definition - CHANGE FOR NANOPI NEO
-RST_PIN         = 199 # RX1
-DC_PIN          = 12 # SDA
-BUSY_PIN        = 198 # TX1
+# assert sunxi("PA06") == 6    # SPI-0 OLED RST
+# assert sunxi("PC00") == 64   # SPI-0 OLED MOSI
+# assert sunxi("PC01") == 65   # SPI-0 OLED MISO
+# assert sunxi("PC02") == 66   # SPI-0 OLED CLK
+# assert sunxi("PC03") == 67   # SPI-0 OLED CS
+assert sunxi("PG08") == 200  # GPIO-G8 - E-Ink BUSY
+# assert sunxi("PG09") == 201  # GPIO-G9 - OLED-DC
+
+# bus = SMBus(0) # use with SMBus instead of spidev
+# RST_PIN         = "PA06"
+# DC_PIN          = "PG09"
+# BUSY_PIN        = "PG08"
+
+# Pin definition - CHANGED FOR NANOPI NEO
+RST_PIN         = 6 # RX1
+DC_PIN          = 201 # SDA
+BUSY_PIN        = 200 # TX1
 
 # SPI device, bus = 0, device = 0
-SPI = spidev.SpiDev(0, 0)
+SPI = spidev.SpiDev(0, 0) # use with spidev instead of SMBus
+
 
 def digital_write(pin, value):
     GPIO.output(pin, value)
@@ -57,7 +73,8 @@ def spi_writebyte(data):
     SPI.writebytes(data)
 
 def module_init():
-    GPIO.setmode(GPIO.RAW)
+    GPIO.setmode(GPIO.RAW)    # spidev
+    #GPIO.setmode(GPIO.SUNXI) # SMBus
     GPIO.setwarnings(False)
     GPIO.setup(RST_PIN, GPIO.OUT)
     GPIO.setup(DC_PIN, GPIO.OUT)
